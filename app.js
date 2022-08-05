@@ -28,26 +28,23 @@ class Car {
             console.log(this.motion = "The car is stopped");
         } else {console.log(this.motion = "The car is moving")}
     }
-    accelerate  (speed,increase)  {
-        let speed1 = speed + increase;
-        if (speed <=0){
+    accelerate  (speed)  {
+        this.speed = speed + 25;
+        if (this.speed <=0){
             console.log(this.motion = "The car is stopped");
         } else {console.log(this.motion = "The car is moving")}
-        console.log(speed1);
+        console.log(this.speed);
     }
-    brake(speed, brake) {
-        this.speed = speed;
-        this.speed2 =speed -brake;
-        if (speed <=0){
+    brake(speed) {
+        this.speed = speed - 10;
+        if (this.speed <=0){
             console.log(this.motion = "The car is stopped");
         } else {console.log(this.motion = "The car is moving")}
-        if(this.speed<0) {this.speed = 0;}
-        console.log (this.speed2);
+        console.log (this.speed);
     }
     emergency_brake(speed) {
-        this.speed =speed = 0;
-        if (speed <=0){
-            this.speed = 0;
+        this.speed = speed = 0;
+        if (this.speed <=0){
             console.log(this.motion = "The car is stopped");
         } else {console.log(this.motion = "The car is moving")}
         console.log(this.motion);
@@ -58,16 +55,15 @@ class Car {
 }
 
 let car1 = new Car("Toyota", "Camry");
-car1.accelerate(20,90);
-console.log(car1.speed);
-car1.status(45);
-car1.brake(50,20);
-
-car1.brake(50,20);
-console.log(car1.speed)
+car1.accelerate(20);
 car1.status()
-car1.emergency_brake()
-car1.status()
+car1.emergency_brake();
+car1.status();
+car1.brake(70);
+car1.brake(10);
+car1.status();
+car1.accelerate(20);
+car1.status();
 
 
 

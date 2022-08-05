@@ -1,6 +1,6 @@
 // first task
 const arr = [2, 4, 6, 8, -3, -5, -7];
-const sum = (arr.filter((x) => x>0)).reduce((previous,current) => previous+current,0);
+let sum = (arr.filter((x) => x>0)).reduce((previous,current) => previous+current,0);
 console.log(sum);
 
 // second task
@@ -28,32 +28,65 @@ class Car {
             console.log(this.motion = "The car is stopped");
         } else {console.log(this.motion = "The car is moving")}
     }
-    accelerate(speed) {
-        this.speed += 25;
-        console.log(this.speed);
+    accelerate  (speed,increase)  {
+        let speed1 = speed + increase;
+        if (speed <=0){
+            console.log(this.motion = "The car is stopped");
+        } else {console.log(this.motion = "The car is moving")}
+        console.log(speed1);
     }
-    brake (speed){
-        this.speed -=20;
+    brake(speed, brake) {
+        this.speed = speed;
+        this.speed2 =speed -brake;
+        if (speed <=0){
+            console.log(this.motion = "The car is stopped");
+        } else {console.log(this.motion = "The car is moving")}
         if(this.speed<0) {this.speed = 0;}
-        console.log (this.speed);
+        console.log (this.speed2);
     }
-    emergency_brake () {
-        this.speed = 0;
-        console.log(this.speed);
+    emergency_brake(speed) {
+        this.speed =speed = 0;
+        if (speed <=0){
+            this.speed = 0;
+            console.log(this.motion = "The car is stopped");
+        } else {console.log(this.motion = "The car is moving")}
+        console.log(this.motion);
     };
-    status () {
-        this.check_motion();
-        this.speed = 0 ;
+    status() {
         console.log(`${this.brand} ${this.model} is moving at ${this.speed} km/h and the status is: ${this.motion}`);
     }
 }
 
-let car = new Car("Toyota", "Camry");
-car.check_motion(20);
-car.accelerate();
-car.brake();
-car.accelerate();
-car.emergency_brake();
-car.status();
-car.status();
+let car1 = new Car("Toyota", "Camry");
+car1.accelerate(20,90);
+console.log(car1.speed);
+car1.status(45);
+car1.brake(50,20);
 
+car1.brake(50,20);
+console.log(car1.speed)
+car1.status()
+car1.emergency_brake()
+car1.status()
+
+
+
+// Fourth task
+
+function addAsync(firstPar, secondPar) {
+    new Promise ((resolve, reject) => {
+        if ( typeof firstPar && typeof secondPar != undefined && typeof firstPar  ==="number" && typeof secondPar === "number"){
+            resolve("success");
+        }else {
+            reject("failure");
+        }
+    }).then(resolve => console.log(resolve))
+    .catch((error) => console.log(error));
+};
+
+addAsync(2,2);
+
+addAsync("ll",9);
+addAsync(30,"2");
+addAsync(77,"0")
+addAsync("0",0)

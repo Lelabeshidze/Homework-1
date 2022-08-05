@@ -81,8 +81,9 @@ function addAsync(firstPar, secondPar) {
 };
 
 addAsync(2,2);
-
 addAsync("ll",9);
 addAsync(30,"2");
-addAsync(77,"0")
-addAsync("0",0)
+addAsync(77,"0");
+addAsync("0",0);
+addAsync(999,77);
+addAsync(-89,"99");
